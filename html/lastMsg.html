@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">    
+</head> 
+        <link rel='stylesheet prefetch' href='https://res.wx.qq.com/open/libs/weui/0.3.0/weui.css'> 
+</head>
+
+<body ontouchstart="" >
+<div class="weui_msg">
+    <div class="weui_icon_area"><i class="weui_icon_success weui_icon_msg"></i></div>
+    <div class="weui_text_area">
+        <h2 class="weui_msg_title">提交成功</h2>
+        <p class="weui_msg_desc">您已成功提交信息，我们会在24小时内反馈处理结果，请耐心等待。您也可通过"进度查询"查看进展。</p>
+    </div>
+    <div class="weui_opr_area">
+        <p class="weui_btn_area">
+            <br><button class="weui_btn weui_btn_primary" id="closeWindow">确定</button>
+        </p>
+    </div>
+    <div class="weui_extra_area">
+        <a href="">查看详情</a>
+    </div>
+</div>
+</body>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>    
+<script>    
+wx.config({    
+debug: false,    
+appId: 'wx96fb745a97967dde',    
+timestamp: 1421142450,    
+nonceStr: '9hKgyCLgGZOgQmEI',    
+signature: 'e5f472d738ab7b1497a23aa3e89685a2406c3088',    
+jsApiList: [       
+'closeWindow'
+]    
+});    
+</script>    
+<script src="./close.js"> </script>
+</html>
