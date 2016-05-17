@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>售后小管家为您服务</title>
+        <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+        <link rel="stylesheet" href="../css/frozen.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel='stylesheet prefetch' href='http://rawgit.com/weui/weui/develop/dist/style/weui.css'>
+        <link rel='stylesheet prefetch' href='https://res.wx.qq.com/open/libs/weui/0.4.1/weui.css'>
+        <link rel="stylesheet" href="demo.css">
+        <script src="../lib/zepto.min.js"></script>
+        <script src="../js/frozen.js"></script>
+    </head>
+    
+    <body ontouchstart>
+        <header class="ui-header ui-header-positive ui-border-b">
+            <i class="ui-icon-return" onclick="history.back()"></i><button class="ui-btn">回首页</button><h1>我的信息 </h1>
+        </header>
+        <footer class="ui-footer ui-footer-btn">
+            <ul class="ui-tiled ui-border-t">
+                <li data-href="index.html" class="ui-border-r">
+                <div class="weui_tabbar_icon">
+                    <img src="https://weui.github.io/weui/images/icon_nav_button.png" alt="">
+                </div><div>接单点</div></li>
+                <li data-href="underservice.html" class="ui-border-r">
+                <div class="weui_tabbar_icon">
+                    <img src="https://weui.github.io/weui/images/icon_nav_article.png" alt="">
+                </div><div>服务中</div></li>
+                <li data-href="successed.html" class="ui-border-r">
+                <div class="weui_tabbar_icon">
+                    <img src="https://weui.github.io/weui/images/icon_nav_msg.png" alt="">
+                 </div><div>已完成</div></li>
+                <li data-href="myinfo.html">
+                <div class="weui_tabbar_icon">
+                      <img src="https://weui.github.io/weui/images/icon_nav_cell.png" alt="">
+                </div><div>我</div></li>
+            </ul>
+        </footer>
+       
+<section class="ui-container">
+  <section id="list">
+    <div class="demo-item">
+        <div class="demo-block">
+           <ul class="ui-tiled" style="background:#F00">
+                        <li><div class="ui-avatar-lg"><span style="background-image:url(http://ico.ooopic.com/iconset03/customicondesignoffice5/gif/10555.gif)"></span></div></li>
+                        <li><div id="name" style="color:#FFF"></div></li>
+           </ul>
+            <ul class="ui-tiled">
+
+                   
+                    <li><div>正在服务</div><i><span id="underService"></span></i></li>
+                    <li><div>已完成</div><i><span id="successed"></span></i></li>
+                    <li><div>服务评分</div><i><span id="evaluate"></span></i></li>
+            </ul>
+        </div>
+    </div>
+ </section>
+
+ <section id="list">
+    <div class="demo-item">
+        <div id="app" class="demo-block">
+            <ul class="ui-list ui-list-text ui-list-link ui-border-tb">
+                <li class="ui-border-t" v-for="service in services">
+                    <h4 class="ui-nowrap">注册时间</h4>
+                    <div class="ui-txt-info">{{service.createdAt}}</div>
+                </li>
+                <li class="ui-border-t" v-for="service in services">
+                    <h4 class="ui-nowrap">上次使用</h4>
+                    <div class="ui-txt-info">{{service.updatedAt}}</div>
+                </li>
+                <li class="ui-border-t" v-for="service in services">
+                    <h4 class="ui-nowrap">手机号码</h4>
+                    <div class="ui-txt-info"><h4>{{service.mobilePhoneNumber}}</div>
+                </li>
+                <li class="ui-border-t" v-for="service in services">
+                    <h4 class="ui-nowrap">所在地区</h4>
+                    <div class="ui-txt-info">{{service.address}}</div>
+                </li>
+                <li class="ui-border-t" v-for="service in services">
+                    <h4 class="ui-nowrap">E-mail</h4>
+                    <div class="ui-txt-info">{{service.email}}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+</section>
+<!-- /.ui-container-->
+
+        <script type="text/javascript">
+            function getCookie(sName) {
+                var aCookie = document.cookie.split('; ');
+                for (var i=0; i < aCookie.length; i++) {
+                    var aCrumb = aCookie[i].split('=');
+                    if (sName == aCrumb[0])
+                    return decodeURI(aCrumb[1]);
+                    }
+                return '';
+            }
+            var name = decodeURI(getCookie("UserName"));
+            var kind = decodeURI(getCookie("kind"));
+            (function isPointInPolygon() {
+                var _result=document.getElementById("name");
+                _result.innerHTML = kind+"专员："+name;
+            })();
+        </script>
+
+        <script>
+        $('.ui-list li,.ui-tiled li').click(function(){
+            if($(this).data('href')){
+                location.href= $(this).data('href');
+            }
+        });
+        $('.ui-header .ui-btn').click(function(){
+            location.href= 'index.html';
+        });
+        </script>
+        <script type="text/javascript" src="../js/vue.js"></script>
+        <script src="../js/bmob-min.js"></script>
+        <script src="../js/myinfo.js"></script>
+    </body>
+</html>

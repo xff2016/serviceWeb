@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"> 
+<link rel='stylesheet prefetch' href='https://res.wx.qq.com/open/libs/weui/0.3.0/weui.css'>     <title>售后就在您身边</title>   
+<style type="text/css">
+body{
+    font-family:Microsoft YaHei;
+  line-height:2;
+}
+h1{
+    font: Microsoft YaHei;
+}
+.weui_label{
+  width: 5em;
+}
+</style>   
+
+</head>
+
+<body ontouchstart="" >
+<div class="hd">
+<h2 class="page_title"  style="text-align:center" ><img src="./Images/123.jpg" height="33" width="33" align="absmiddle">
+售后服务</h2>
+</div>
+
+<form name="form" action="./php/commit.php" method="post">
+<div class="container">
+    
+  <div class="weui_cells_title" style="background:#C0C0C0">服务类型</div>
+
+<!-- 保修&回收-->
+<div class="weui_cells weui_cells_radio">
+    <label class="weui_cell weui_check_label" for="x11">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>报修</p>
+        </div>
+        <div class="weui_cell_ft">
+            <input type="radio" class="weui_check" name="kind" value="维修" id="x11"
+            checked="checked">
+            <span class="weui_icon_checked"></span>
+        </div>
+    </label>
+    <label class="weui_cell weui_check_label" for="x12">
+
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>回收</p>
+        </div>
+        <div class="weui_cell_ft">
+            <input type="radio" name="kind" class="weui_check" value="回收" id="x12" >
+            <span class="weui_icon_checked"></span>
+        </div>
+    </label>
+</div>
+
+
+  <div class="weui_cells_title" style="background:#C0C0C0">基本信息</div>
+<div class="weui_cells weui_cells_form">
+
+<!-- 手机号-->
+    <div class="weui_cell">
+        <div class="weui_cell_hd"><br>
+            <label class="weui_label">手机号<font color="red"> *</font></label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary"><br>
+            <input class="weui_input" name="phone" type="text" placeholder="联系电话，不能为空" />
+        </div>
+    </div><br>
+
+<!-- 联系人-->
+    <div class="weui_cell">
+        <div class="weui_cell_hd"><br>
+            <label class="weui_label">联系人<font color="red"> *</font></label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary"><br>
+            <input class="weui_input" name="name" type="text" placeholder="联系人的称呼，不能为空" />
+        </div>
+    </div><br>
+
+<!-- 联系地址-->
+    <div class="weui_cell">
+        <div class="weui_cell_hd"><br>
+          <label class="weui_label">联系地址<font color="red"> *</font></label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary"><br>
+            <input class="weui_input" name="address" type="text" placeholder="详细地址（如街道、门牌号等）" />
+        </div><br>
+    </div><br>
+
+</div>
+
+<p class="weui_cells_tips" style="background:#C0C0C0">提示 : 请确认基本信息无误，方便我们联系您！</p>
+
+
+<div class="weui_cell weui_cell_select weui_select_after">
+       <div class="weui_cell_hd">产品类型<font color="red"> *</font></div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <select class="weui_select" name="product">
+                <option value="0">请选择</option>
+                <option value="冰箱">冰箱</option>
+                <option value="空调">空调</option>
+                <option value="电视">电视</option>
+                <option value="洗衣机">洗衣机</option>
+            </select>
+        </div>
+    </div>
+
+
+<div class="weui_cells weui_cells_form">
+    <div class="weui_cell">
+        <div class="weui_cell_hd"><br>
+            <label class="weui_label">产品型号<font color="red"> *</font></label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary"><br>
+            <input class="weui_input" name="model" type="text" placeholder="具体的产品型号" />
+        </div>
+    </div>
+
+<!-- 产品型号-->
+<div class="container">
+    <div class="weui_cells weui_cells_form">
+      <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+          <div class="weui_uploader">
+            <div class="weui_uploader_hd weui_cell">
+              <div class="weui_cell_bd weui_cell_primary">图片上传</div>
+              <div class="weui_cell_ft js_counter">0/6</div>
+            </div>
+            <div class="weui_uploader_bd">
+              <ul class="weui_uploader_files">
+                <!-- 预览图插入到这 -->
+              </ul>
+              <div class="weui_uploader_input_wrp">
+                <input class="weui_uploader_input js_file" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- 上传警告-->
+  <div class="weui_dialog_alert" style="display: none;">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+      <div class="weui_dialog_hd"><strong class="weui_dialog_title">警告</strong></div>
+      <div class="weui_dialog_bd">弹窗内容，告知当前页面信息等</div>
+      <div class="weui_dialog_ft">
+        <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+      </div>
+    </div>
+  </div>
+
+<!-- 具体问题描述-->
+<div class="weui_cells_title" style="background:#C0C0C0">具体问题描述（选填）</div>
+<div class="weui_cells weui_cells_form">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <textarea name="extratext" class="weui_textarea" id="textarea" placeholder="请补充描述您的产品问题，不要超过120字。" rows="3"></textarea>
+            <div class="weui_textarea_counter"><span id="count">0</span>/120</div>
+        </div>
+    </div>
+</div>
+
+<div class="weui_btn_area">
+    <a class="weui_btn weui_btn_primary" id="button" href="javascript:;">提交</a>
+</div>
+
+
+
+</form>
+</body>
+
+ <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://rawgit.com/progrape/weui.js/master/dist/weui.js'></script>
+
+<!--判断手机号等输入是否合法-->
+<script type="text/javascript">
+    $(function(){
+    $('#button').on('click', function(e){
+        var pairs = $('form').serialize().split(/&/gi);
+        var data = {};
+        pairs.forEach(function(pair) {
+            pair = pair.split('=');
+            data[pair[0]] = decodeURIComponent(pair[1] || '');
+        });
+        if(!data.phone || !/^(\d{3})(\d{4})(\d{3})([0-9]|X)$/.test(data.phone)){
+            $.weui.topTips('请输入正确的手机号码');
+            return;
+        }
+        else if(!data.name){
+            $.weui.topTips('请输入联系人');
+            return;
+        }
+        else if(!data.address){
+            $.weui.topTips('请输入详细联系地址');
+            return;
+        }
+        else if(data.product==0){
+            $.weui.topTips('请选择产品类型');
+            return;
+        }
+        else{
+            form.submit();
+        }
+    
+    })
+})
+</script> 
+
+<!--上传图片并富有上传状态-->
+<script type="text/javascript">$(function () {
+    // 允许上传的图片类型
+    var allowTypes = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];
+    //10MB
+    var maxSize = 10 * 1024 * 1024;
+    // 图片最大宽度
+    var maxWidth = 300;
+    // 最大上传图片数量
+    var maxCount = 6;
+    $('.js_file').on('change', function (event) {
+        var files = event.target.files;
+
+        // 如果没有选中文件，直接返回
+        if (files.length === 0) {
+            return;
+        }
+
+        for (var i = 0, len = files.length; i < len; i++) {
+            var file = files[i];
+            var reader = new FileReader();
+
+            // 如果类型不在允许的类型范围内
+            if (allowTypes.indexOf(file.type) === -1) {
+                $.weui.alert('该类型不允许上传');
+                continue;
+            }
+
+            if (file.size > maxSize) {
+                $.weui.alert('图片太大，不允许上传');
+                continue;
+            }
+
+            if ($('.weui_uploader_file').length >= maxCount) {
+                $.weui.alert('最多只能上传' + maxCount + '张图片');
+                return;
+            }
+
+            reader.onload = function (e) {
+                var img = new Image();
+                img.onload = function () {
+                    // 不要超出最大宽度
+                    var w = Math.min(maxWidth, img.width);
+                    // 高度按比例计算
+                    var h = img.height * (w / img.width);
+                    var canvas = document.createElement('canvas');
+                    var ctx = canvas.getContext('2d');
+                    // 设置 canvas 的宽度和高度
+                    canvas.width = w;
+                    canvas.height = h;
+                    ctx.drawImage(img, 0, 0, w, h);
+                    var base64 = canvas.toDataURL('image/png');
+
+                    // 插入到预览区
+                    var $preview = $('<li class="weui_uploader_file weui_uploader_status" style="background-image:url(' + base64 + ')"><div class="weui_uploader_status_content">0%</div></li>');
+                    $('.weui_uploader_files').append($preview);
+                    var num = $('.weui_uploader_file').length;
+                    $('.js_counter').text(num + '/' + maxCount);
+
+                    var progress = 0;
+                    function uploading() {
+                        $preview.find('.weui_uploader_status_content').text(++progress + '%');
+                        if (progress < 100) {
+                            setTimeout(uploading, 30);
+                        }
+                        else {
+                            // 如果是失败，塞一个失败图标
+                            //$preview.find('.weui_uploader_status_content').html('<i class="weui_icon_warn"></i>');
+                            $preview.removeClass('weui_uploader_status').find('.weui_uploader_status_content').remove();
+                        }
+                    }
+                    setTimeout(uploading, 30);
+                };
+
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});</script>
+
+<!--问题描述-->
+<script type="text/javascript">$(function(){
+  var max = 120;
+  $('#textarea').on('input', function(){
+     var text = $(this).val();
+     var len = text.length;
+    
+     $('#count').text(len);
+    
+     if(len > max){
+       $(this).closest('.weui_cell').addClass('weui_cell_warn');
+     }
+     else{
+       $(this).closest('.weui_cell').removeClass('weui_cell_warn');
+     }
+     
+  });
+})</script>
+</html>
